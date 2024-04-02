@@ -1,4 +1,5 @@
 import datetime
+import re
 
 import vk_api
 from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
@@ -15,6 +16,7 @@ def main():
     longpoll = VkBotLongPoll(vk_session, idpub)
     print("Ожидаем сообщения от пользователя...")
     for event in longpoll.listen():
+        # решение для задачи Бот Большой брат
         if event.type == VkBotEventType.MESSAGE_NEW:
             msg_text = event.obj.message["text"]
             usr_id = event.obj.message["from_id"]
@@ -26,6 +28,8 @@ def main():
                 msg += f"\nКак поживает {user['city']['title']}?"
             vk.messages.send(user_id=usr_id, message=msg,
                              random_id=random.randint(0, 2 ** 64))
+
+            # решение для задачи Бот Дата-Время
             if any(map(lambda word: word in msg_text.lower(), ("время", "число", "дата", "день"))):
                 dt = datetime.datetime.now()
                 msg = f"Сегодня {dt.strftime('%d-%m-%Y')}\nВремя {dt.strftime('%H:%M:%S')}\nДень недели {weekdays[dt.weekday()]}"
@@ -35,9 +39,17 @@ def main():
                 msg =f"{user['first_name']}, Вы можете узнать текущие дату и время, для этого в Вашем сообщении должно быть одно из слов: время, дата, число, день"
                 vk.messages.send(user_id=usr_id, message=msg, random_id=random.randint(0, 2 ** 64))
 
-
-
-
+            #решение для задачи Бот дня недели
+            if re.match("^(([0-9]{4})-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01]))$", msg_text):
+                year, month, day = map(int, msg_text.split("-"))
+                dt = datetime.date(year, month, day)
+                msg = f"День недели в тот день: {weekdays[dt.weekday()]}"
+                vk.messages.send(user_id=usr_id, message=msg,
+                                 random_id=random.randint(0, 2 ** 64))
+            else:
+                msg = "Введите дату в формате 'ГГГГ-ММ-ДД' ('YYYY-MM-DD')"
+                vk.messages.send(user_id=usr_id, message=msg,
+                                 random_id=random.randint(0, 2 ** 64))
 
 if __name__ == "__main__":
     main()
