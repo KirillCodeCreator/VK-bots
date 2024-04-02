@@ -9,9 +9,27 @@ token = "vk1.a.2l-SDnF6CViDvFDPKWE_tqkmNFMEBJ42vdAogawnAvksla0YfM7FSQ-YPONjsPVY0
 idpub = 224431580
 weekdays = ("Понедельник", "Вторник", "Среда", "Четверг",
             "Пятница", "Суббота", "Воскресенье")
+album_id = 302234059
 
+def auth_handler():
+    # Код двухфакторной аутентификации
+    key = input("Enter authentication code: ")
+    # Если: True - сохранить, False - не сохранять.
+    remember_device = True
+
+    return key, remember_device
 
 def main():
+    login, password = 'login', 'password'
+    vk_user_session = vk_api.VkApi(login, password, app_id=6287487, client_secret="QbYic1K3lEV5kTGiqlq2", auth_handler=auth_handler)
+    try:
+        vk_user_session.auth(token_only=True)
+    except vk_api.AuthError as error_msg:
+        print(error_msg)
+        return
+
+    vk_user = vk_user_session.get_api()
+
     vk_session = vk_api.VkApi(token=token)
     longpoll = VkBotLongPoll(vk_session, idpub)
     print("Ожидаем сообщения от пользователя...")
@@ -50,6 +68,20 @@ def main():
                 msg = "Введите дату в формате 'ГГГГ-ММ-ДД' ('YYYY-MM-DD')"
                 vk.messages.send(user_id=usr_id, message=msg,
                                  random_id=random.randint(0, 2 ** 64))
+
+            #решение для задачи Получение фотографий из альбома
+            if any(map(lambda word: word in msg_text.lower(), ("фото", "альбом"))):
+                resp = vk_user.photos.get(group_id=idpub, album_id=album_id, count=100, offset=0)
+                if resp["items"]:
+                    for item in resp["items"]:
+                        photos = sorted(item["sizes"], key=lambda val: (-val["height"]))
+                        width = photos[0].get("width", "")
+                        height = photos[0].get("height", "")
+                        url = photos[0].get("url", "")
+                        vk.messages.send(user_id=usr_id, message=f'Размеры {width}х{height}\nurl = {url}', random_id=random.randint(0, 2 ** 64))
+            else:
+                msg = f"{user['first_name']}, Вы можете получить фото из альбома, для этого в Вашем сообщении должно быть одно из слов: фото, альбом"
+                vk.messages.send(user_id=usr_id, message=msg, random_id=random.randint(0, 2 ** 64))
 
 if __name__ == "__main__":
     main()
