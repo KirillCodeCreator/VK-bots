@@ -4,10 +4,6 @@ from vk_api.bot_longpoll import VkBotEventType
 
 from auth import get_group_session, get_VkBotLongPoll, get_group_vkapi, get_user_vkapi, GROUP_ID, ALBUM_ID
 
-weekdays = ("Понедельник", "Вторник", "Среда", "Четверг",
-            "Пятница", "Суббота", "Воскресенье")
-
-
 def main():
     vk_session = get_group_session()
     vk_user = get_user_vkapi()

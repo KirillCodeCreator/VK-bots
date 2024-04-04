@@ -33,7 +33,7 @@ def main():
                 vk.messages.send(user_id=event.obj.message['from_id'],
                                  message=f"{user['first_name']}, Вики сообщило, что много материала может относиться к твоему сообщению. Напиши точнее.",
                                  random_id=random.randint(0, 2 ** 64))
-                print(f"Сообщение не точное")
+                print("Сообщение не точное")
             except wikipedia.exceptions.PageError:
                 vk.messages.send(user_id=event.obj.message['from_id'],
                                  message=f"{user['first_name']}, увы, на Википедии ничего не найдено. Может попробуешь еще раз?",
