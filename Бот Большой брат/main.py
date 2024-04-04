@@ -12,15 +12,19 @@ def main():
     print("Ожидаем сообщения от пользователя...")
     for event in longpoll.listen():
         if event.type == VkBotEventType.MESSAGE_NEW:
-            msg_text = event.obj.message["text"]
-            usr_id = event.obj.message["from_id"]
-            user = vk.users.get(user_ids=str(usr_id), fields="city")[0]
-            print(f"Получено сообщение от пользователя {user['first_name']}: {msg_text}")
-            msg = f"Привет, {user['first_name']}!"
-            if user["city"]:
-                msg += f"\nКак поживает {user['city']['title']}?"
-            vk.messages.send(user_id=usr_id, message=msg,
-                             random_id=random.randint(0, 2 ** 64))
+            name = vk.users.get(user_id=event.obj.message['from_id'])[0]['first_name']
+            try:
+                city = vk.users.get(user_id=event.obj.message['from_id'], fields=['city'])[0]['city']['title']
+            except Exception:
+                city = ''
+            if not city:
+                vk.messages.send(user_id=event.obj.message['from_id'],
+                                 message=f"Привет, {name}",
+                                 random_id=random.randint(0, 2 ** 64))
+            else:
+                vk.messages.send(user_id=event.obj.message['from_id'],
+                                 message=f"Привет, {name}\nКак поживает {city}?",
+                                 random_id=random.randint(0, 2 ** 64))
 
 
 if __name__ == "__main__":
