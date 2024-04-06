@@ -1,0 +1,388 @@
+{
+  "age": [
+    {
+      "value": "12-18",
+      "count": 296
+    },
+    {
+      "value": "18-21",
+      "count": 214
+    },
+    {
+      "value": "21-24",
+      "count": 217
+    },
+    {
+      "value": "24-27",
+      "count": 449
+    },
+    {
+      "value": "27-30",
+      "count": 782
+    },
+    {
+      "value": "30-35",
+      "count": 2734
+    },
+    {
+      "value": "35-45",
+      "count": 4710
+    },
+    {
+      "value": "45-100",
+      "count": 2047
+    }
+  ],
+  "cities": [
+    {
+      "count": 939,
+      "name": "Санкт-Петербург",
+      "value": 2
+    },
+    {
+      "count": 429,
+      "name": "Москва",
+      "value": 1
+    },
+    {
+      "count": 325,
+      "name": "Пермь",
+      "value": 110
+    },
+    {
+      "count": 302,
+      "name": "Самара",
+      "value": 123
+    },
+    {
+      "count": 197,
+      "name": "Киров",
+      "value": 66
+    },
+    {
+      "count": 194,
+      "name": "Сыктывкар",
+      "value": 138
+    },
+    {
+      "count": 179,
+      "name": "Челябинск",
+      "value": 158
+    },
+    {
+      "count": 173,
+      "name": "Нижний Новгород",
+      "value": 95
+    },
+    {
+      "count": 163,
+      "name": "Екатеринбург",
+      "value": 49
+    },
+    {
+      "count": 158,
+      "name": "Вологда",
+      "value": 41
+    },
+    {
+      "count": 135,
+      "name": "Ярославль",
+      "value": 169
+    },
+    {
+      "count": 131,
+      "name": "Уфа",
+      "value": 151
+    },
+    {
+      "count": 129,
+      "name": "Красноярск",
+      "value": 73
+    },
+    {
+      "count": 129,
+      "name": "Ижевск",
+      "value": 56
+    },
+    {
+      "count": 125,
+      "name": "Новосибирск",
+      "value": 99
+    },
+    {
+      "count": 124,
+      "name": "Казань",
+      "value": 60
+    },
+    {
+      "count": 107,
+      "name": "Тюмень",
+      "value": 147
+    },
+    {
+      "count": 104,
+      "name": "Череповец",
+      "value": 8
+    },
+    {
+      "count": 103,
+      "name": "Воронеж",
+      "value": 42
+    },
+    {
+      "count": 101,
+      "name": "Омск",
+      "value": 104
+    },
+    {
+      "count": 75,
+      "name": "Петрозаводск",
+      "value": 112
+    },
+    {
+      "count": 72,
+      "name": "Архангельск",
+      "value": 22
+    },
+    {
+      "count": 71,
+      "name": "Мурманск",
+      "value": 87
+    },
+    {
+      "count": 68,
+      "name": "Белгород",
+      "value": 26
+    },
+    {
+      "count": 67,
+      "name": "Бологое",
+      "value": 704
+    }
+  ],
+  "countries": [
+    {
+      "code": "RU",
+      "count": 12378,
+      "name": "Россия",
+      "value": 1
+    },
+    {
+      "code": "BY",
+      "count": 239,
+      "name": "Беларусь",
+      "value": 3
+    },
+    {
+      "code": "UA",
+      "count": 106,
+      "name": "Украина",
+      "value": 2
+    },
+    {
+      "code": "KZ",
+      "count": 62,
+      "name": "Казахстан",
+      "value": 4
+    },
+    {
+      "code": "DE",
+      "count": 17,
+      "name": "Германия",
+      "value": 65
+    },
+    {
+      "code": "US",
+      "count": 16,
+      "name": "США",
+      "value": 9
+    },
+    {
+      "code": "IT",
+      "count": 13,
+      "name": "Италия",
+      "value": 88
+    },
+    {
+      "code": "FI",
+      "count": 8,
+      "name": "Финляндия",
+      "value": 207
+    },
+    {
+      "code": "KG",
+      "count": 7,
+      "name": "Кыргызстан",
+      "value": 11
+    },
+    {
+      "code": "MD",
+      "count": 6,
+      "name": "Молдова",
+      "value": 15
+    },
+    {
+      "code": "GB",
+      "count": 6,
+      "name": "Великобритания",
+      "value": 49
+    },
+    {
+      "code": "TR",
+      "count": 5,
+      "name": "Турция",
+      "value": 200
+    },
+    {
+      "code": "UZ",
+      "count": 5,
+      "name": "Узбекистан",
+      "value": 18
+    },
+    {
+      "code": "AM",
+      "count": 4,
+      "name": "Армения",
+      "value": 6
+    },
+    {
+      "code": "NL",
+      "count": 3,
+      "name": "Нидерланды",
+      "value": 139
+    },
+    {
+      "code": "FR",
+      "count": 3,
+      "name": "Франция",
+      "value": 209
+    },
+    {
+      "code": "KR",
+      "count": 3,
+      "name": "Южная Корея",
+      "value": 226
+    },
+    {
+      "code": "CZ",
+      "count": 3,
+      "name": "Чехия",
+      "value": 215
+    },
+    {
+      "code": "ES",
+      "count": 3,
+      "name": "Испания",
+      "value": 87
+    },
+    {
+      "code": "AZ",
+      "count": 2,
+      "name": "Азербайджан",
+      "value": 5
+    },
+    {
+      "code": "BE",
+      "count": 2,
+      "name": "Бельгия",
+      "value": 36
+    },
+    {
+      "code": "LT",
+      "count": 2,
+      "name": "Литва",
+      "value": 13
+    },
+    {
+      "code": "EG",
+      "count": 2,
+      "name": "Египет",
+      "value": 76
+    },
+    {
+      "code": "IL",
+      "count": 2,
+      "name": "Израиль",
+      "value": 8
+    }
+  ],
+  "mobile_reach": 12125,
+  "reach": 12920,
+  "reach_subscribers": 6186,
+  "sex": [
+    {
+      "value": "f",
+      "count": 11489
+    },
+    {
+      "value": "m",
+      "count": 1426
+    }
+  ],
+  "sex_age": [
+    {
+      "value": "f;12-18",
+      "count": 208
+    },
+    {
+      "value": "f;18-21",
+      "count": 163
+    },
+    {
+      "value": "f;21-24",
+      "count": 184
+    },
+    {
+      "value": "f;24-27",
+      "count": 401
+    },
+    {
+      "value": "f;27-30",
+      "count": 675
+    },
+    {
+      "value": "f;30-35",
+      "count": 2447
+    },
+    {
+      "value": "f;35-45",
+      "count": 4218
+    },
+    {
+      "value": "f;45-100",
+      "count": 1854
+    },
+    {
+      "value": "m;12-18",
+      "count": 88
+    },
+    {
+      "value": "m;18-21",
+      "count": 51
+    },
+    {
+      "value": "m;21-24",
+      "count": 33
+    },
+    {
+      "value": "m;24-27",
+      "count": 48
+    },
+    {
+      "value": "m;27-30",
+      "count": 107
+    },
+    {
+      "value": "m;30-35",
+      "count": 287
+    },
+    {
+      "value": "m;35-45",
+      "count": 491
+    },
+    {
+      "value": "m;45-100",
+      "count": 192
+    }
+  ]
+}

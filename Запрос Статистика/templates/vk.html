@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-danger" align="center">Activities </h1>
+<div class="col-md6 border rounded">
+    <table class="table">
+        {% for item in activities %}
+        <tr class="bg-danger">
+            <td class="table-active">{{item[0]}}</td>
+            <td class="table-active">{{item[1]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<h1 class="text-warning" align="center">Ages </h1>
+<div class="col-md6 border rounded">
+    <table class="table">
+        {% for item in age %}
+        <tr class="bg-warning">
+            <td class="table-active">{{item[0]}}</td>
+            <td class="table-active">{{item[1]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<h1 class="text-success" align="center">Cities </h1>
+<div class="col-md6 border rounded">
+    <table class="table">
+        {% for item in cities %}
+        <tr class="bg-success">
+            <td class="table-active">{{item}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+<p>
+
+{% endblock %}
